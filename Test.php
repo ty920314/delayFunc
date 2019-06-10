@@ -11,11 +11,12 @@ class Controller extends DeferFuncHeap {
         $return['error'] = 0;
         $return['msg'] = 'ok';
         $msg = '发送短信';
-       $this->defer(function ($name, $phone) use ($msg){
+        $this->defer(function ($name, $phone) use ($msg){
             //模拟逻辑 耗时10秒
             sleep(10);
             $this->send($name,$phone,$msg);
         },['name','phone'],1);
+        //记录日志
         $this->defer([$this,'log'],['array_test'],77);
         return $this->json($return);
     }
