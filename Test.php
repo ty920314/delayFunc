@@ -28,7 +28,7 @@ class Controller extends DeferFuncHeap {
     }
     public function log($logMessage)
     {
-        $this->log->debug("ty:%s",$logMessage);
+        \log->debug("ty:%s",$logMessage);
     }
 }
 
